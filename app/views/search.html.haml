@@ -1,0 +1,9 @@
+%ul.businesses
+	- for business in @businesses
+		%li.business
+			%ul.parts
+				%li.review_count= business.review_count
+				%li.rating= render_rating(business.rating)
+				%li.name= business.name
+				%li.location= business.location
+

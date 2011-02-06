@@ -15,6 +15,30 @@ class Yaup < Padrino::Application
   # disable :flash              # Disables rack-flash (enabled by default if sessions)
   # layout  :my_layout          # Layout can be in views/layouts/foo.ext or views/foo.ext (default :application)
   #
+  
+  get "/" do
+    render "index"
+  end
+
+
+  get "/", :with => [:location, :term]  do
+    consumer_key = 'lqGD6NG6AtjgWq1H8smWnw'
+    consumer_secret = 'SDiD1IHNu2_wkPOH59PkPb6lwjk'
+    token = 'iIZKfru9-EHSvQ6c9tvKtdNQ5KxMftvW'
+    token_secret = '3l3NLym3ZfakBbx-fYu0kK6YOto'
+    api_host = 'api.yelp.com'
+    consumer = OAuth::Consumer.new(consumer_key, consumer_secret, {:site => "http://#{api_host}"})
+    access_token = OAuth::AccessToken.new(consumer, token, token_secret)
+    
+    path = "/v2/search?term=#{params[:term]}&location=#{params[:location]}"
+    result = JSON.parse(access_token.get(path).body)
+
+  	@businesses = result['businesses'].map do |business_json|
+      Business.new(business_json)
+  	end.sort_by(&:review_count).reverse
+
+    render "search"
+  end
 
   ##
   # You can configure for a specified environment like:

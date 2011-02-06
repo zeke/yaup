@@ -4,6 +4,8 @@ source :rubygems
 gem 'rake'
 gem 'rack-flash'
 gem 'thin' # or mongrel
+gem 'oauth'
+gem 'json'
 
 # Component requirements
 gem 'haml'

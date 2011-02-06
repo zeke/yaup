@@ -1,0 +1,40 @@
+body {
+  font-size: 1em;
+  font-family: Georgia; }
+
+ul.businesses {
+  float: none;
+  margin: 0 0 0 0;
+  padding: 0 0 0 0;
+  list-style: none; }
+  ul.businesses li.business {
+    display: block;
+    margin: 0 0 0 0;
+    padding: 3px 0 3px 0;
+    border-bottom: 1px solid #f0f0f0; }
+    ul.businesses li.business:last-child {
+      border-bottom: none;
+      padding: 3px 0; }
+    ul.businesses li.business ul.parts {
+      display: block;
+      float: none;
+      overflow: hidden;
+      clear: both;
+      margin: 0;
+      padding: 0;
+      list-style: none; }
+      ul.businesses li.business ul.parts li {
+        margin: 0;
+        padding: 0;
+        float: left; }
+        ul.businesses li.business ul.parts li.review_count {
+          width: 60px;
+          text-align: right;
+          padding-right: 10px; }
+        ul.businesses li.business ul.parts li.rating {
+          padding-top: 5px;
+          width: 110px; }
+        ul.businesses li.business ul.parts li.name {
+          width: 300px; }
+        ul.businesses li.business ul.parts li.location {
+          width: 400px; }
