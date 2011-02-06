@@ -20,8 +20,8 @@ class Yaup < Padrino::Application
     render "index"
   end
 
-
-  get "/", :with => [:location, :term]  do
+  get :index, :map => '/:location/:term' do
+  # get :index, :with => [:location, :term]  do
     consumer_key = 'lqGD6NG6AtjgWq1H8smWnw'
     consumer_secret = 'SDiD1IHNu2_wkPOH59PkPb6lwjk'
     token = 'iIZKfru9-EHSvQ6c9tvKtdNQ5KxMftvW'
