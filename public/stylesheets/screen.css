@@ -6,13 +6,27 @@ body {
   color: black; }
 
 #header {
-  padding: 10px 10px 10px 70px;
+  padding: 10px 10px 10px 20px;
   background-color: #e90400;
   color: white;
   font-size: 1.1em; }
+  #header a {
+    color: white;
+    text-decoration: none; }
+
+p {
+  margin: 0;
+  padding: 20px; }
+
+a {
+  color: #e90400;
+  text-decoration: none; }
+  a:hover {
+    text-decoration: underline; }
 
 ul.businesses {
   float: none;
+  width: auto;
   margin: 10px 0 0 10px;
   padding: 0 0 0 0;
   list-style: none; }
@@ -42,9 +56,14 @@ ul.businesses {
           padding-right: 10px; }
         ul.businesses li.business ul.parts li.rating {
           padding-top: 5px;
-          width: 100px; }
+          width: 90px; }
         ul.businesses li.business ul.parts li.name {
-          width: 300px; }
-        ul.businesses li.business ul.parts li.location {
-          width: 400px;
-          color: #999999; }
+          width: 400px; }
+          ul.businesses li.business ul.parts li.name a {
+            color: black; }
+          ul.businesses li.business ul.parts li.name span.location {
+            color: #999999;
+            font-size: 0.9em;
+            font-style: italic; }
+            ul.businesses li.business ul.parts li.name span.location a {
+              color: #999999; }

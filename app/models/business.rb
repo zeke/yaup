@@ -21,6 +21,10 @@ class Business
     out.join(" ")
   end
   
+  def display_address
+    json_data['location']['display_address'].first
+  end
+  
   def review_count
     json_data['review_count'].to_i
   end

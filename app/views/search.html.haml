@@ -1,4 +1,6 @@
-#header= "YAUP / #{params[:term]} near #{params[:location]}"	
+#header
+	= link_to("YAUP", "/")
+	= "/ #{params[:term]} near #{params[:location]}"
 
 %ul.businesses
 	- for business in @businesses
@@ -6,6 +8,7 @@
 			%ul.parts
 				%li.review_count= business.review_count
 				%li.rating= render_rating(business.rating)
-				%li.name= business.name
-				%li.location= business.location
-
+				%li.name
+					= link_to(business.name, business.json_data['url'])
+					%span.location
+						= link_to(business.location, "http://maps.google.com/maps?q=#{business.name}, #{business.display_address}")

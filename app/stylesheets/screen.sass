@@ -8,13 +8,27 @@ body
 	color: black
 
 #header
-	padding: 10px 10px 10px 70px
+	padding: 10px 10px 10px 20px
 	background-color: $color
 	color: white
 	font-size: 1.1em
+	a
+		color: white
+		text-decoration: none
+
+p
+	margin: 0
+	padding: 20px
+
+a
+	color: $color
+	text-decoration: none
+	&:hover
+		text-decoration: underline
 
 ul.businesses
 	float: none
+	width: auto
 	margin: 10px 0 0 10px
 	padding: 0 0 0 0
 	list-style: none
@@ -44,12 +58,18 @@ ul.businesses
 					padding-right: 10px
 				&.rating
 					padding-top: 5px
-					width: 100px
+					width: 90px
 				&.name
-					width: 300px
-				&.location
 					width: 400px
-					color: #999
+					a
+						color: black
+					span.location
+						color: #999
+						font-size: .9em
+						font-style: italic
+						a
+							color: #999
+
 
 			
 		
